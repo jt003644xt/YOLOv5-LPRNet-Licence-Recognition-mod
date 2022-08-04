@@ -11,7 +11,7 @@ import numpy as np
 # https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data#2-create-labels
 from PIL import Image
 # CCPD车牌有重复，应该是不同角度或者模糊程度
-path = r'K:\MyProject\datasets\ccpd\new\ccpd_2019\images\test'  # 改成自己的车牌路径
+path = r'C:\Users\jt003\PycharmProjects\datasets\CCPD2020\ccpd_green\images\val'  # 改成自己的车牌路径
 
 
 provinces = ["皖", "沪", "津", "渝", "冀", "晋", "蒙", "辽", "吉", "黑", "苏", "浙", "京", "闽", "赣", "鲁", "豫", "鄂", "湘", "粤", "桂", "琼", "川", "贵", "云", "藏", "陕", "甘", "青", "宁", "新", "警", "学", "O"]
@@ -27,7 +27,7 @@ for filename in os.listdir(path):
     list_plate = plate.split('_')  # 读取车牌
     result += provinces[int(list_plate[0])]
     result += alphabets[int(list_plate[1])]
-    result += ads[int(list_plate[2])] + ads[int(list_plate[3])] + ads[int(list_plate[4])] + ads[int(list_plate[5])] + ads[int(list_plate[6])]
+    result += ads[int(list_plate[2])] + ads[int(list_plate[3])] + ads[int(list_plate[4])] + ads[int(list_plate[5])] + ads[int(list_plate[6])]+ ads[int(list_plate[7])]
     # 新能源车牌的要求，如果不是新能源车牌可以删掉这个if
     # if result[2] != 'D' and result[2] != 'F' \
     #         and result[-1] != 'D' and result[-1] != 'F':
@@ -52,7 +52,7 @@ for filename in os.listdir(path):
     img = img.resize((94, 24), Image.LANCZOS)
     img = np.asarray(img)  # 转成array,变成24*94*3
 
-    cv2.imencode('.jpg', img)[1].tofile(r"K:\MyProject\datasets\ccpd\new\ccpd_2019\rec_images\test\{}.jpg".format(result))
+    cv2.imencode('.jpg', img)[1].tofile(r"C:\Users\jt003\PycharmProjects\datasets\CCPD2020\ccpd_green\rec_images\val\{}.jpg".format(result))
     # 图片中文名会报错
     # cv2.imwrite(r"K:\MyProject\datasets\ccpd\new\ccpd_2020\rec_images\train\{}.jpg".format(result), img)  # 改成自己存放的路径
 print("共生成{}张".format(num))

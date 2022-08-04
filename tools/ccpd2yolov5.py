@@ -43,9 +43,9 @@ def txt_translate(path, txt_path):
 
 if __name__ == '__main__':
     # det图片存储地址
-    trainDir = r"/content/CCPD2020/ccpd_green/train//"
-    validDir = r"/content/CCPD2020/ccpd_green/val//"
-    testDir = r"/content/CCPD2020/ccpd_green/test//"
+    trainDir = r"/content/CCPD2020/ccpd_green/images/train//"
+    validDir = r"/content/CCPD2020/ccpd_green/images/val//"
+    testDir = r"/content/CCPD2020/ccpd_green/images/test//"
     # det txt存储地址
     train_txt_path = r"/content/CCPD2020/ccpd_green/labels/train//"
     val_txt_path = r"/content/CCPD2020/ccpd_green/labels/val//"

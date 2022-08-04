@@ -37,7 +37,7 @@ def get_parser():
     parser.add_argument('--num_workers', default=0, type=int, help='Number of workers used in dataloading')
     parser.add_argument('--cuda', default=True, type=bool, help='Use cuda to train model')
     parser.add_argument('--show', default=False, type=bool, help='show test image and its predict result or not.')
-    parser.add_argument('--pretrained_model', default=r'K:\MyProject\YOLOv5-LPRNet-Licence-Recognition\weights\lprnet_best.pth', help='pretrained base model')
+    parser.add_argument('--pretrained_model', default=r'C:\Users\jt003\PycharmProjects\YOLOv5-LPRNet-Licence-Recognition-mod\runslprnet-pretrain.pth', help='pretrained base model')
 
     args = parser.parse_args()
 
